@@ -29,6 +29,15 @@ python main.py
 windows-network
 ```
 
+### Building Standalone Executable
+```bash
+# Compile to standalone Windows executable
+.\compile.bat
+
+# The executable will be created at:
+# dist\windows-network.exe
+```
+
 ## Architecture
 
 ### Application Structure
@@ -60,5 +69,28 @@ The application is structured for extension with:
 
 - **PyQt6**: Main GUI framework (>=6.6.1)
 - **Python**: 3.8+ required
+- **PyInstaller**: For creating standalone executables (auto-installed by compile.bat)
 
 Note: PyQt6 installation on Windows may require pre-built wheels due to Visual C++ build tool requirements.
+
+## Compilation
+
+The project includes `compile.bat` for creating standalone Windows executables:
+- Uses PyInstaller to bundle the application and all dependencies
+- Creates a single executable file that runs without Python installation
+- Automatically handles PyQt6 dependencies and hidden imports
+- Places the final executable in `dist\windows-network.exe`
+
+## CI/CD
+
+GitHub Actions workflow (`.github/workflows/release.yml`) provides:
+- Automatic compilation on version tags (e.g., `v1.0.0`)
+- GitHub Releases creation with downloadable executables
+- Manual workflow triggering capability
+- Artifact retention for build outputs
+
+To trigger a release:
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```

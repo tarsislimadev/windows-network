@@ -51,16 +51,50 @@ python main.py
 windows-network
 ```
 
+### Building Standalone Executable
+
+To create a standalone Windows executable that doesn't require Python installation:
+
+```bash
+# Run the compilation script
+.\compile.bat
+```
+
+This will:
+- Automatically install PyInstaller if not present
+- Compile the application into a single executable file
+- Create `dist\windows-network.exe` that can run on any Windows machine
+- Include all necessary dependencies and resources
+
+The executable will be created in the `dist` folder and can be distributed without requiring Python or PyQt6 installation on the target machine.
+
+### Automated Releases
+
+The project includes GitHub Actions automation that:
+- Automatically builds Windows executables on version tags (e.g., `v1.0.0`)
+- Creates GitHub releases with the compiled executable
+- Provides downloadable `.exe` files for end users
+- Can be triggered manually via GitHub Actions
+
+To create a new release:
+1. Create and push a version tag: `git tag v1.0.0 && git push origin v1.0.0`
+2. GitHub Actions will automatically build and publish the release
+
 ## Project Structure
 
 ```
 windows-network/
 ├── main.py              # Application entry point
+├── compile.bat          # Windows compilation script
+├── .github/
+│   └── workflows/
+│       └── release.yml  # GitHub Actions workflow
 ├── src/                 # Source code directory
 │   ├── __init__.py
 │   └── main_window.py   # Main application window
 ├── requirements.txt     # Python dependencies
 ├── setup.py            # Package setup configuration
+├── CLAUDE.md           # Claude Code project instructions
 └── README.md           # This file
 ```
 
