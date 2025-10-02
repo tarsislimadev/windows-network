@@ -32,10 +32,10 @@ jobs:
     - name: Verify executable creation
       run: |
         if (Test-Path "dist\windows-network.exe") {
-          Write-Host "✓ Executable created successfully"
+          Write-Host "[OK] Executable created successfully"
           Get-Item "dist\windows-network.exe" | Select-Object Name, Length, LastWriteTime
         } else {
-          Write-Error "✗ Executable not found"
+          Write-Error "[ERROR] Executable not found"
           exit 1
         }
       shell: powershell
