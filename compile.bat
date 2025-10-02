@@ -28,7 +28,6 @@ pyinstaller ^
     --onefile ^
     --windowed ^
     --name "windows-network" ^
-    --icon="resources\icon.ico" ^
     --add-data "src;src" ^
     --hidden-import "PyQt6.QtCore" ^
     --hidden-import "PyQt6.QtGui" ^
