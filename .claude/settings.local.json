@@ -12,7 +12,8 @@
       "Bash(where cmd)",
       "Bash(\"C:\\Windows\\System32\\cmd.exe\" /c \"cd /d C:\\Users\\tarsi\\projetos\\windows-network && compile.bat\")",
       "Bash(\"C:\\Windows\\System32\\cmd.exe\" /c compile.bat)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
