@@ -97,7 +97,7 @@ jobs:
         asset_content_type: application/octet-stream
         
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: windows-network-executable
         path: dist/windows-network.exe
